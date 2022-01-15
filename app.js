@@ -1,6 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-
+const env = require("dotenv").config();
 const app = express();
 
 app.set('view engine', 'ejs');
@@ -49,6 +49,6 @@ app.post("/work", function (req, res) {
     workItem.push(item);
     res.render("/work");
 });
-app.listen(3000, function () {
+app.listen(process.env.PORT, function () {
     console.log("Server running on Port 3000");
 });
