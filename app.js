@@ -13,18 +13,7 @@ let array = [];
 let workItem = [];
 
 app.get("/", function (req, res) {
-    
-    let today = new Date();
-    
-    let option = {
-        weekday: "long",
-        day: "numeric",
-        month: "long"
-    };
-
-    let day = today.toLocaleDateString("hi-IN", option);
-
-    res.render("list", {listTitle: day,newListItem:array});
+    res.render("list", {listTitle: "Dialy TO-DO List",newListItem:array});
 });
 
 app.post("/", function (req, res) {
